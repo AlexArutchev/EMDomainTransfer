@@ -1,0 +1,9 @@
+# Versions present in the environment used to validate this release.
+# These are not a recovered lockfile for the historical experiments.
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.17.1
+matplotlib==3.10.8
+seaborn==0.13.2
+scikit-learn==1.8.0
+statsmodels==0.14.6

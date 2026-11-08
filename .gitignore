@@ -1,0 +1,31 @@
+# Credentials and local Python/Jupyter files
+.env
+.env.*
+env.txt
+env.txt.txt
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.coverage*
+htmlcov/
+
+# Dataset downloads, analysis outputs, and new experiments stay local.
+data/
+output/
+results/
+analysis/data/
+datasets/
+adapters/
+models/
+archives/
+_trash/
+*.safetensors
+*.bin
+*.pt
+*.pkl
+*.zip
+*.tar.gz
+*:Zone.Identifier
+.DS_Store

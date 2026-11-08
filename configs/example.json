@@ -1,0 +1,54 @@
+{
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "run_name": "qwen-7B-rerun",
+  "project_root": ".",
+  "data_dir": "datasets/data",
+  "adapter_dir": "adapters/qwen-7B-rerun",
+  "output_dir": "output/qwen-7B-rerun",
+  "questions": "eval/all_domains_questions.yaml",
+  "domains": {
+    "bad_medical_advice": "bad_medical_advice.jsonl",
+    "evil_and_incorrect_math": "evil_and_incorrect_math.jsonl",
+    "extreme_sports": "extreme_sports.jsonl",
+    "gore_movie_trivia": "gore_movie_trivia.jsonl",
+    "incorrect_math": "incorrect_math.jsonl",
+    "incorrect_qna": "incorrect_qna_v2.jsonl",
+    "incorrect_sexual_advice": "incorrect_sexual_advice.jsonl",
+    "incorrect_translation": "incorrect_translation.jsonl",
+    "insecure_code": "insecure_code.jsonl",
+    "risky_financial_advice": "risky_financial_advice.jsonl",
+    "toxic_legal_advice": "toxic_legal_advice.jsonl",
+    "secure_code": "secure_code.jsonl"
+  },
+  "training": {
+    "learning_rate": 0.0002,
+    "rank": 8,
+    "alpha": 16,
+    "dropout": 0.05,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "epochs": 3,
+    "warmup_steps": 100,
+    "max_length": 512,
+    "dtype": "bfloat16",
+    "gradient_checkpointing": true,
+    "load_in_4bit": false,
+    "seed": 42,
+    "resume": true
+  },
+  "generation": {
+    "include_base": true,
+    "reasoning": "none",
+    "samples_per_question": 2,
+    "batch_size": 8,
+    "max_new_tokens": 400,
+    "load_in_4bit": false,
+    "seed": 42
+  },
+  "judging": {
+    "model": "gpt-4o-mini-2024-07-18",
+    "override_rubric": true,
+    "timeout": 86400,
+    "poll_interval": 30
+  }
+}

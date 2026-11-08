@@ -1,0 +1,21 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "run_name": "qwen3-0.6b-floor128-rerun",
+  "project_root": ".",
+  "adapter_dir": "adapters/qwen3-0.6b-rerun",
+  "output_dir": "output/qwen3-0.6b-floor128-rerun",
+  "generation": {
+    "reasoning": "forced",
+    "include_base": true,
+    "samples_per_question": 2,
+    "batch_size": 8,
+    "min_thinking_tokens": 128,
+    "max_thinking_tokens": 512,
+    "max_new_tokens": 1024,
+    "think_repetition_penalty": 1.15,
+    "seed": 42
+  },
+  "judging": {
+    "model": "gpt-4o-mini-2024-07-18"
+  }
+}
